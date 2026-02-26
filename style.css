@@ -1,0 +1,136 @@
+/* style.css - Lighter Navy Theme (Updated) */
+.stApp {
+    /* لون الخلفية: كحلي فاتح مريح للعين */
+    background-color: #1a2332;
+    color: #E0E0E0;
+}
+
+/* حاوية التمرير */
+.scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 25px;
+    background: #252d3d; /* كحلي أفتح قليلاً للتباين */
+    border: 1px solid #3E4C69;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* --- تنسيقات الشبكة العمودية --- */
+.vertical-stack {
+    display: inline-flex; align-items: flex-start;
+    gap: 8px; position: relative; padding-top: 15px;
+}
+.step-column {
+    display: flex; flex-direction: column; align-items: center; position: relative;
+}
+.token-box {
+    width: 40px; height: 45px; background: #2D3748; border: 1px solid #4A5568;
+    border-radius: 6px; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; color: #DCDCDC; font-weight: bold; font-family: monospace; z-index: 2;
+}
+.token-idx { font-size: 9px; color: #A0AEC0; }
+.connector {
+    width: 2px; height: 15px; background-color: #4A5568; transition: 0.3s;
+}
+.embed-box {
+    width: 40px; height: 60px;
+    background: linear-gradient(180deg, #4299E1 0%, #1a2332 100%);
+    border: 1px solid #4299E1; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    writing-mode: vertical-rl; font-size: 9px; color: #fff; z-index: 2;
+}
+.cnn-overlay {
+    position: absolute; top: -5px; bottom: -5px; border: 3px solid #F6E05E;
+    background: rgba(246, 224, 94, 0.1); border-radius: 8px;
+    pointer-events: none; z-index: 5; transition: left 0.3s ease;
+}
+.features-container {
+    display: inline-flex; gap: 8px; margin-top: 20px; padding-top: 20px;
+    border-top: 2px dashed #4A5568;
+}
+.feature-box {
+    width: 40px; height: 40px; background: #48BB78; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: bold; font-size: 11px;
+    box-shadow: 0 0 10px rgba(72, 187, 120, 0.3); animation: popIn 0.3s;
+}
+.pool-box {
+    width: 40px; height: 40px; background: #9F7AEA; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: bold; animation: bounceIn 0.4s;
+}
+.gru-box {
+    width: 35px; height: 35px; border: 1px solid #718096; background: #2D3748;
+    border-radius: 4px; color: #CBD5E0; font-size: 10px;
+    display: flex; align-items: center; justify-content: center;
+}
+.gru-fwd { background: #38A169 !important; color: white !important; transform: scale(1.1); box-shadow: 0 0 8px #38A169; }
+.gru-bwd { background: #D53F8C !important; color: white !important; transform: scale(1.1); box-shadow: 0 0 8px #D53F8C; }
+.section-title {
+    color: #63B3ED; font-family: monospace; font-weight: bold;
+    margin-bottom: 10px; text-transform: uppercase;
+}
+.arrow-down { font-size: 24px; color: #A0AEC0; margin: 10px 0; display: block;}
+@keyframes popIn { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+@keyframes bounceIn { 0% { transform: scale(0); } 80% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+/* ============================================================ */
+/* إضافات جديدة: تنسيقات العرض التفاعلي (CNN & GRU Live)     */
+/* ============================================================ */
+
+/* حاوية النص للرابط في العرض التفاعلي */
+.url-text {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #e0e0e0;
+    background-color: #252d3d; /* نفس لون الصناديق */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #4A5568;
+    white-space: nowrap;
+    overflow-x: auto;
+    margin: 15px 0;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* ظل داخلي للعمق */
+}
+
+/* النافذة المنزلقة (المربع الأحمر) */
+.cnn-window {
+    background-color: #e53e3e; /* أحمر واضح */
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #e53e3e; /* توهج حول المربع */
+    transition: all 0.2s ease;
+}
+
+/* تنسيق أحرف الـ GRU وهي تظهر */
+.gru-char {
+    display: inline-block;
+    animation: fadeIn 0.5s;
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    padding: 0 2px;
+}
+
+/* ألوان مؤشر الخطر */
+.risk-high {
+    color: #FC8181; /* أحمر فاتح */
+    font-weight: bold;
+    text-shadow: 0 0 5px #C53030;
+}
+
+.risk-low {
+    color: #68D391; /* أخضر فاتح */
+    font-weight: bold;
+    text-shadow: 0 0 5px #2F855A;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
